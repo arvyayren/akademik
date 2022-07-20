@@ -257,6 +257,12 @@ return [
             'url'  => 'master/santri',
             'icon' => 'fas fa-user-friends',
         ],
+        ['header' => 'TRANSAKSI'],
+        [
+            'text' => ' Pengumuman',
+            'url'  => 'transaksi/pengumuman',
+            'icon' => 'fas fa-bullhorn',
+        ],
     ],
 
     /*
