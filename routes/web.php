@@ -26,3 +26,5 @@ Route::resources([
     'master/santri' => App\Http\Controllers\Master\SantriController::class,
     'transaksi/pengumuman' => App\Http\Controllers\Transaksi\PengumumanController::class,
 ]);
+
+Route::post('status/pengumuman', [App\Http\Controllers\Transaksi\PengumumanController::class, 'status']);

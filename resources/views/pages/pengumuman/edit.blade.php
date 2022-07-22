@@ -40,6 +40,55 @@
         </form>
 
     </x-adminlte-card>
+
+    <x-adminlte-card title="List Pendaftar" theme="dark" icon="fas fa-list-alt">
+        
+        @php
+        $heads = [
+            'ID',
+            'Tanggal',
+            'Nama',
+            'Tempat Lahir',
+            'Tanggal Lahir',
+            'No KTP',
+            'Riwayat Pendidikan',
+            'Nama Wali',
+            'No KTP Wali',
+            'Status',
+            ['label' => 'Actions', 'no-export' => true, 'width' => 5],
+        ];
+
+        $config = [
+            'data' => $pendaftar,
+            'order' => [[1, 'asc']],
+            'columns' => [null, null, null, null,null, null, null, null,null, null, ['orderable' => false]],
+        ];
+        @endphp
+
+        {{-- Minimal example / fill data using the component slot --}}
+        <x-adminlte-datatable id="table1" :heads="$heads">
+            @foreach($config['data'] as $row)
+                <tr>
+                    @foreach($row as $cell)
+                        <td>{!! $cell !!}</td>
+                    @endforeach
+                    
+                    <form id="diterima{{$row[0]}}" method="POST" action="/status/pengumuman">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{$row[0]}}">
+                        <input type="hidden" name="status" value="Diterima">
+                    </form>
+
+                    <form id="ditolak{{$row[0]}}" method="POST" action="/status/pengumuman">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{$row[0]}}">
+                        <input type="hidden" name="status" value="Ditolak">
+                    </form>
+                </tr>
+            @endforeach
+        </x-adminlte-datatable>
+        
+    </x-adminlte-card>
 @stop
 
 @section('css')

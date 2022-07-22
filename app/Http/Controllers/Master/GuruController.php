@@ -57,7 +57,7 @@ class GuruController extends Controller
         if($create){
             return redirect('/master/guru')->with(['success' => 'Data Berhasil Dibuat']);
         }else{
-            return redirect('/master/guru')->with(['danger' => 'Data Gagal Dibuat']);
+            return redirect('/master/guru')->with(['error' => 'Data Gagal Dibuat']);
         }
 
     }
@@ -102,7 +102,7 @@ class GuruController extends Controller
         if($update){
             return redirect()->back()->with(['success' => 'Data Berhasil Diubah']);
         }else{
-            return redirect()->back()->with(['danger' => 'Data Gagal Diubah']);
+            return redirect()->back()->with(['error' => 'Data Gagal Diubah']);
         }
     }
 
@@ -119,7 +119,7 @@ class GuruController extends Controller
         if($delete){
             return redirect('/master/guru')->with(['success' => 'Data Berhasil Dihapus']);
         }else{
-            return redirect('/master/guru')->with(['danger' => 'Data Gagal Dihapus']);
+            return redirect('/master/guru')->with(['error' => 'Data Gagal Dihapus']);
         }
     }
 }

@@ -13,6 +13,10 @@ class IndexController extends Controller
 
         $datas = TransaksiPengumumanPendaftaranHeader::select('*')->get();
 
+        foreach($datas as $k => $v){
+            $v->detail = TransaksiPengumumanPendaftaranDetail::where('id_pengumuman_pendaftaran', $v->id)->get();
+        }
+
         return view('pages.front.pengumuman',compact('datas'));
     }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Bootstrap 4 Example</title>
+        <title>Pengumuman</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -38,6 +38,35 @@
                                             </div>
                                         </div>
                                         <h6><b>Penanggung Jawab</b> {{$data->penanggung_jawab}}</h6>
+                                        <center><h4>Pendaftar</h4></center>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>Tanggal</th>
+                                                    <th>Nama</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @forelse($data->detail as $detail)
+                                                <tr>
+                                                    <td>{{date('d M Y', strtotime($detail->tanggal))}}</td>
+                                                    <td>{{$detail->nama}}</td>
+                                                    <td>
+                                                        @if($detail->status == null)
+                                                        Proses
+                                                        @else
+                                                        {{$detail->status}}
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @empty
+                                                <tr><td colspan="99">No Data</td></tr>
+                                                @endforelse
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </td>
                                 <td><button type="button" class="btn btn-sm btn-info btn-block" onclick="daftar({{$data->id}})" data-toggle="modal" data-target="#myModal">Daftar</button></td>
