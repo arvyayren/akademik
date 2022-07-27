@@ -11,5 +11,6 @@ class TransaksiPenilaianSantriDetail extends Model
 
     protected $table = 'transaksi_penilaian_santri_detail';
 
-    protected $fillable = ['tanggal','subjek','nilai','keterangan','created_at','updated_at'];
+    protected $fillable = ['id_penilaian','tanggal','subjek','nilai','keterangan','mapel',
+    'created_at','updated_at'];
 }

@@ -25,6 +25,11 @@ Route::resources([
     'master/mapel' => App\Http\Controllers\Master\MapelController::class,
     'master/santri' => App\Http\Controllers\Master\SantriController::class,
     'transaksi/pengumuman' => App\Http\Controllers\Transaksi\PengumumanController::class,
+    'transaksi/jadwal_kelas' => App\Http\Controllers\Transaksi\JadwalKelasController::class,
+    'transaksi/penilaian' => App\Http\Controllers\Transaksi\PenilaianController::class,
 ]);
+
+Route::post('transaksi/penilaian_santri' , [App\Http\Controllers\Transaksi\PenilaianController::class, 'storePenilaianSantri']);
+Route::delete('transaksi/penilaian_santri/{id}' , [App\Http\Controllers\Transaksi\PenilaianController::class, 'deletePenilaianSantri']);
 
 Route::post('status/pengumuman', [App\Http\Controllers\Transaksi\PengumumanController::class, 'status']);

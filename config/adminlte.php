@@ -263,6 +263,16 @@ return [
             'url'  => 'transaksi/pengumuman',
             'icon' => 'fas fa-bullhorn',
         ],
+        [
+            'text' => ' Jadwal Kelas',
+            'url'  => 'transaksi/jadwal_kelas',
+            'icon' => 'fas fa-calendar-week',
+        ],
+        [
+            'text' => ' Penilaian',
+            'url'  => 'transaksi/penilaian',
+            'icon' => 'fas fa-file-invoice',
+        ],
     ],
 
     /*
