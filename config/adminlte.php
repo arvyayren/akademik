@@ -273,6 +273,27 @@ return [
             'url'  => 'transaksi/penilaian',
             'icon' => 'fas fa-file-invoice',
         ],
+        ['header' => 'LAPORAN'],
+        [
+            'text' => ' Laporan Guru',
+            'url'  => 'transaksi/pengumuman',
+            'icon' => 'fas fa-bullhorn',
+        ],
+        [
+            'text' => ' Laporan Santri',
+            'url'  => 'transaksi/jadwal_kelas',
+            'icon' => 'fas fa-calendar-week',
+        ],
+        [
+            'text' => ' Laporan Penerimaan Santri',
+            'url'  => 'transaksi/penilaian',
+            'icon' => 'fas fa-file-invoice',
+        ],
+        [
+            'text' => ' Laporan Penilaian Santri',
+            'url'  => 'transaksi/penilaian',
+            'icon' => 'fas fa-file-invoice',
+        ],
     ],
 
     /*
