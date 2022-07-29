@@ -3,7 +3,7 @@
 @section('title', 'Akademik - Master Santri')
 
 @section('content_header')
-    <h1>Edit</h1>
+    <h1>Edit Data Santri</h1>
 @stop
 
 @section('content')
@@ -44,8 +44,11 @@
                 {{$data->riwayat_pendidikan}}
             </x-adminlte-textarea>
             
-            <x-adminlte-input name="kelas" value="{{$data->kelas}}" label="Kelas" placeholder="Kelas..."
-            fgroup-class="col-md-6" disable-feedback required/>
+            <x-adminlte-select label="Kelas" fgroup-class="col-md-6" name="kelas" required>
+                <option value="A" <?php if($data->kelas == 'A'){ echo 'selected';} ?>>A</option>
+                <option value="B" <?php if($data->kelas == 'B'){ echo 'selected';} ?>>B</option>
+                <option value="C" <?php if($data->kelas == 'C'){ echo 'selected';} ?>>C</option>
+            </x-adminlte-select>
         </div>
         
         <div class="row">

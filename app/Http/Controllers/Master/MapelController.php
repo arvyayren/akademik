@@ -15,6 +15,8 @@ class MapelController extends Controller
 
         $data = array();
 
+        $no = 0;
+
         foreach($list as $k => $v){
 
             $btnEdit = '<a href="/master/mapel/'.$v->id.'/edit" class="btn btn-xs btn-default text-primary mx-1 shadow">
@@ -23,9 +25,11 @@ class MapelController extends Controller
             $btnDelete = '<button type="submit" form="delete'.$v->id.'" class="btn btn-xs btn-default text-danger mx-1 shadow">
                             <i class="fa fa-lg fa-fw fa-trash"></i>
                         </button>';
+            
+            $no = $no+1;
 
             $data[] = array(
-                $v->id,$v->nama,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
+                $no, $v->nama,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
             );
         }
 

@@ -33,3 +33,8 @@ Route::post('transaksi/penilaian_santri' , [App\Http\Controllers\Transaksi\Penil
 Route::delete('transaksi/penilaian_santri/{id}' , [App\Http\Controllers\Transaksi\PenilaianController::class, 'deletePenilaianSantri']);
 
 Route::post('status/pengumuman', [App\Http\Controllers\Transaksi\PengumumanController::class, 'status']);
+
+Route::get('/laporan/guru', [App\Http\Controllers\LaporanController::class, 'guru'])->name('home');
+Route::get('/laporan/santri', [App\Http\Controllers\LaporanController::class, 'santri'])->name('home');
+Route::get('/laporan/penerimaan-santri', [App\Http\Controllers\LaporanController::class, 'penerimaan_santri'])->name('home');
+Route::get('/laporan/penilaian-santri', [App\Http\Controllers\LaporanController::class, 'penilaian_santri'])->name('home');

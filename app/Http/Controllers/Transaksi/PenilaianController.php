@@ -39,7 +39,11 @@ class PenilaianController extends Controller
             }
 
             $nilai = array_filter($nilai);
+            if(count($nilai) > 0){
             $rata_rata = array_sum($nilai)/count($nilai);
+            }else{
+                $rata_rata = 0;
+            }
 
             $data[] = array(
                 $v->id,$v->nama,$v->kelas,$nama_wali,$v->bulan,$rata_rata,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'

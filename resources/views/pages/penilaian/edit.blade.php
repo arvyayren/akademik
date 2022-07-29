@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Akademik - Master Mapel')
+@section('title', 'Akademik - Penilaian')
 
 @section('content_header')
-    <h1>Edit</h1>
+    <h1>Edit Penilaian</h1>
 @stop
 
 @section('content')

@@ -3,7 +3,7 @@
 @section('title', 'Akademik - Transaksi Pengumuman')
 
 @section('content_header')
-    <h1>Index</h1>
+    <h1>Pengumuman</h1>
 @stop
 
 @section('content')

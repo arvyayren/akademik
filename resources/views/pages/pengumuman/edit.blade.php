@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Akademik - Master Mapel')
+@section('title', 'Akademik - Master Pengumuman')
 
 @section('content_header')
-    <h1>Edit</h1>
+    <h1>Edit Pengumuman</h1>
 @stop
 
 @section('content')
-    <x-adminlte-card title="Edit Mapel" theme="dark" icon="fas fa-list-alt">
+    <x-adminlte-card title="Edit Pengumuman" theme="dark" icon="fas fa-list-alt">
         
         @include('widget.flash')
 

@@ -3,7 +3,7 @@
 @section('title', 'Akademik - Transaksi Jadwal Kelas')
 
 @section('content_header')
-    <h1>Index</h1>
+    <h1>Jadwal Kelas</h1>
 @stop
 
 @section('content')
