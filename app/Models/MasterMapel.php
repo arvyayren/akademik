@@ -9,7 +9,7 @@ class MasterMapel extends Model
 {
     use HasFactory;
 
-    protected $table = 'master_mapel';
+    protected $table = 'data_mapel';
 
     protected $fillable = ['nama','created_at','updated_at'];
 }

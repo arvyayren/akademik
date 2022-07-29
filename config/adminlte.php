@@ -246,16 +246,19 @@ return [
             'text' => ' Guru',
             'url'  => 'master/guru',
             'icon' => 'fas fa-chalkboard-teacher',
+            'can'  => ['guru','admin','pimpinan','santri'],
         ],
         [
             'text' => ' Mapel',
             'url'  => 'master/mapel',
             'icon' => 'fas fa-book',
+            'can'  => ['guru','admin','pimpinan','santri'],
         ],
         [
             'text' => ' Santri',
             'url'  => 'master/santri',
             'icon' => 'fas fa-user-friends',
+            'can'  => ['guru','admin','pimpinan','santri'],
         ],
         ['header' => 'TRANSAKSI'],
         [

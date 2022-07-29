@@ -25,6 +25,36 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('admin', function () {
+            if(\Auth::user()->email == 'admin@admin.com'){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        
+        Gate::define('guru', function () {
+            if(\Auth::user()->email == 'guru@guru.com'){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        
+        Gate::define('santri', function () {
+            if(\Auth::user()->email == 'santri@santri.com'){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        
+        Gate::define('pimpinan', function () {
+            if(\Auth::user()->email == 'pimpinan@pimpinan.com'){
+                return true;
+            }else{
+                return false;
+            }
+        });
     }
 }
