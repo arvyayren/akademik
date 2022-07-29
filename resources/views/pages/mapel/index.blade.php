@@ -3,7 +3,7 @@
 @section('title', 'Akademik - Master Mapel')
 
 @section('content_header')
-    <h1>Index</h1>
+    <h1>Data Mapel</h1>
 @stop
 
 @section('content')

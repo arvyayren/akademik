@@ -15,6 +15,8 @@ class GuruController extends Controller
 
         $data = array();
 
+        $no = 0;
+
         foreach($list as $k => $v){
 
             $btnEdit = '<a href="/master/guru/'.$v->id.'/edit" class="btn btn-xs btn-default text-primary mx-1 shadow">
@@ -24,8 +26,10 @@ class GuruController extends Controller
                             <i class="fa fa-lg fa-fw fa-trash"></i>
                         </button>';
 
+            $no = $no+1;
+
             $data[] = array(
-                $v->id,$v->nama,$v->tempat_lahir,$v->tanggal_lahir,$v->no_ktp,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
+                $no,$v->nama,$v->tempat_lahir,$v->tanggal_lahir,$v->no_ktp,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
             );
         }
 

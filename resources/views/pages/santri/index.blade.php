@@ -3,7 +3,7 @@
 @section('title', 'Akademik - Master Santri')
 
 @section('content_header')
-    <h1>Index</h1>
+    <h1>Data Santri</h1>
 @stop
 
 @section('content')
@@ -44,8 +44,11 @@
             <div class="row">
                 <x-adminlte-textarea name="riwayat_pendidikan" fgroup-class="col-md-6" label="Riwayat Pendidikan" placeholder="Riwayat Pendidikan..." required/>
                 
-                <x-adminlte-input name="kelas" label="Kelas" placeholder="Kelas..."
-                fgroup-class="col-md-6" disable-feedback required/>
+                <x-adminlte-select label="Kelas" fgroup-class="col-md-6" name="kelas" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </x-adminlte-select>
             </div>
             
             <div class="row">

@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Akademik - Transaksi Jadwal Kelas')
+@section('title', 'Akademik - Transaksi Penilaian')
 
 @section('content_header')
-    <h1>Index</h1>
+    <h1>Penilaian</h1>
 @stop
 
 @section('content')
 
-    <x-adminlte-card title="List Jadwal Kelas" theme="dark" icon="fas fa-list-alt">
+    <x-adminlte-card title="List Penilaian" theme="dark" icon="fas fa-list-alt">
         
         @include('widget.flash')
 

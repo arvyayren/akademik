@@ -3,7 +3,7 @@
 @section('title', 'Akademik - Master Guru')
 
 @section('content_header')
-    <h1>Edit</h1>
+    <h1>Edit Data Guru</h1>
 @stop
 
 @section('content')
@@ -52,8 +52,11 @@
         </div>
         
         <div class="row">
-            <x-adminlte-input name="wali_kelas" value="{{$data->wali_kelas}}" label="Wali Kelas" placeholder="Wali Kelas..."
-            fgroup-class="col-md-6" disable-feedback required/>
+            <x-adminlte-select label="Kelas" fgroup-class="col-md-6" name="wali_kelas" required>
+                <option value="A" <?php if($data->wali_kelas == 'A'){ echo 'selected';} ?>>A</option>
+                <option value="B" <?php if($data->wali_kelas == 'B'){ echo 'selected';} ?>>B</option>
+                <option value="C" <?php if($data->wali_kelas == 'C'){ echo 'selected';} ?>>C</option>
+            </x-adminlte-select>
         </div>
         
         <x-adminlte-button icon="fas fa-check-circle" type="submit" label="Submit" class="bg-success btn-block"/>
