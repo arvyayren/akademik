@@ -10,7 +10,6 @@
     <x-adminlte-card title="List Guru" theme="dark" icon="fas fa-list-alt">
         
         @include('widget.flash')
-
         <x-adminlte-modal id="create" title="Create" theme="success"
         icon="fas fa-plus-square" size='lg'>
             <form action="/master/guru" method="post">
@@ -64,8 +63,10 @@
             </x-slot>
         </x-adminlte-modal>
 
+        @if(Auth::user()->email == 'admin@admin.com')
         <x-adminlte-button icon="fas fa-plus-square" label="Create" data-toggle="modal" data-target="#create" class="bg-success"/>    
         <br/><br/>
+        @endif
 
         @php
         $heads = [
