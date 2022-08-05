@@ -252,7 +252,7 @@ return [
             'text' => ' Mapel',
             'url'  => 'master/mapel',
             'icon' => 'fas fa-book',
-            'can'  => ['guru','admin'],
+            'can'  => ['admin'],
         ],
         [
             'text' => ' Santri',
@@ -271,7 +271,7 @@ return [
             'text' => ' Jadwal Kelas',
             'url'  => 'transaksi/jadwal_kelas',
             'icon' => 'fas fa-calendar-week',
-            'can'  => ['admin'],
+            'can'  => ['admin', 'guru', 'santri'],
         ],
         [
             'text' => ' Penilaian',
@@ -302,7 +302,7 @@ return [
             'text' => ' Laporan Penilaian Santri',
             'url'  => 'laporan/penilaian-santri',
             'icon' => 'fas fa-file-invoice',
-            'can'  => ['admin', 'pimpinan'],
+            'can'  => ['admin', 'pimpinan', 'santri'],
         ],
     ],
 

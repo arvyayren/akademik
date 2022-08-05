@@ -17,6 +17,10 @@
             <form action="/master/mapel" method="post">
             @csrf
             <div class="row">
+                <x-adminlte-input name="kode" label="Kode" placeholder="Kode..."
+                fgroup-class="col-md-6" disable-feedback required/>
+            </div>
+            <div class="row">
                 <x-adminlte-input name="nama" label="Nama" placeholder="Nama..."
                 fgroup-class="col-md-6" disable-feedback required/>
             </div>
@@ -28,13 +32,16 @@
                 <x-adminlte-button theme="danger" label="Dismiss" data-dismiss="modal"/>
             </x-slot>
         </x-adminlte-modal>
-
+        
+        @if(Auth::user()->email == 'admin@admin.com')
         <x-adminlte-button icon="fas fa-plus-square" label="Create" data-toggle="modal" data-target="#create" class="bg-success"/>    
         <br/><br/>
+        @endif
 
         @php
         $heads = [
             'ID',
+            'Kode',
             'Nama',
             ['label' => 'Actions', 'no-export' => true, 'width' => 5],
         ];

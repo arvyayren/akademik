@@ -45,7 +45,8 @@
         
         @php
         $heads = [
-            'ID',
+            'id',
+            'Kode Pendaftaran',
             'Tanggal',
             'Nama',
             'Tempat Lahir',

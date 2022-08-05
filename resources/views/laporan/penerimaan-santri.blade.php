@@ -33,7 +33,7 @@
     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>No</th>
+                <th>Kode Pendaftaran</th>
                 <th>Nama</th>
                 <th>Tempat Lahir</th>
                 <th>Tanggal Lahir</th>
@@ -44,7 +44,7 @@
         <tbody>
             @foreach($data as $datas)
             <tr>
-                <td>{{ $no++}}</td>
+                <td>{{ $datas->kode_pendaftaran}}</td>
                 <td>{{ $datas->nama }}</td>
                 <td>{{ $datas->tempat_lahir }}</td>
                 <td>{{ $datas->tanggal_lahir }}</td>

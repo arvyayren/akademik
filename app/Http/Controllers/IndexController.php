@@ -24,7 +24,38 @@ class IndexController extends Controller
         
         $input = $request->all();
 
-        $create = TransaksiPengumumanPendaftaranDetail::create($input);
+        $tahun = date('Y');
+        
+        $bulan = date('m');
+
+        $no = 1;
+
+        $check = TransaksiPengumumanPendaftaranDetail::whereYear('created_at', '=', $tahun)
+        ->whereMonth('created_at', '=', $bulan)
+        ->get();
+
+        $max = count($check);
+
+        if($max > 0){
+            $kode_pendaftaran = 'RG' . $tahun . $bulan . sprintf("%04s", abs($max + 1));
+        }else{
+            $kode_pendaftaran = 'RG' . $tahun . $bulan . sprintf("%04s", $no);
+        }    
+        
+
+        $create = TransaksiPengumumanPendaftaranDetail::create([
+            'id_pengumuman_pendaftaran' => $request->id_pengumuman_pendaftaran,
+            'tanggal' => $request->tanggal,
+            'nama' => $request->nama,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'no_ktp' => $request->no_ktp,
+            'riwayat_pendidikan' => $request->riwayat_pendidikan,
+            'nama_wali' => $request->nama_wali,
+            'no_ktp_wali' => $request->no_ktp_wali,
+            'status' => $request->status,
+            'kode_pendaftaran' => $kode_pendaftaran,
+        ]);
 
         return redirect('pengumuman');
     }

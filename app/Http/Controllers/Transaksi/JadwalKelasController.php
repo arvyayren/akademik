@@ -8,26 +8,32 @@ use Illuminate\Http\Request;
 use App\Models\TransaksiJadwalKelas;
 use App\Models\MasterGuru;
 use App\Models\MasterMapel;
+use Auth;
 
 class JadwalKelasController extends Controller
 {
     public function index()
     {
-        $list = TransaksiJadwalKelas::select('id','hari','kelas')->get();
+        $list = TransaksiJadwalKelas::select('transaksi_jadwal_kelas.id as id','transaksi_jadwal_kelas.hari as hari','transaksi_jadwal_kelas.kelas as kelas', 'data_guru.nama as nama')
+        ->join('data_guru', 'data_guru.id', 'transaksi_jadwal_kelas.nama_guru')
+        ->get();
 
         $data = array();
 
         foreach($list as $k => $v){
-
+            if(Auth::user()->email == 'admin@admin.com'){
             $btnEdit = '<a href="/transaksi/jadwal_kelas/'.$v->id.'/edit" class="btn btn-xs btn-default text-primary mx-1 shadow">
                             <i class="fa fa-lg fa-fw fa-pen"></i>
                         </a>';
             $btnDelete = '<button type="submit" form="delete'.$v->id.'" class="btn btn-xs btn-default text-danger mx-1 shadow">
                             <i class="fa fa-lg fa-fw fa-trash"></i>
                         </button>';
-
+            }else{
+                $btnEdit ="";
+                $btnDelete = "" ;
+            }
             $data[] = array(
-                $v->id,$v->hari,$v->kelas,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
+                $v->id,$v->hari,$v->kelas,$v->nama,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
             );
         }
 

@@ -15,6 +15,10 @@
         @csrf
         {{ method_field('PUT') }}
         <div class="row">
+            <x-adminlte-input name="kode" label="Kode" value="{{$data->kode}}"
+            fgroup-class="col-md-6" disable-feedback required/>
+        </div>
+        <div class="row">
             <x-adminlte-input name="nama" label="Nama" value="{{$data->nama}}"
             fgroup-class="col-md-6" disable-feedback required/>
         </div>

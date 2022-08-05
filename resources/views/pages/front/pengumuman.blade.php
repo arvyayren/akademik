@@ -44,6 +44,7 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Tanggal</th>
+                                                    <th>Kode Pendaftaran</th>
                                                     <th>Nama</th>
                                                     <th>Status</th>
                                                 </tr>
@@ -52,6 +53,7 @@
                                                 @forelse($data->detail as $detail)
                                                 <tr>
                                                     <td>{{date('d M Y', strtotime($detail->tanggal))}}</td>
+                                                    <td>{{$detail->kode_pendaftaran}}</td>
                                                     <td>{{$detail->nama}}</td>
                                                     <td>
                                                         @if($detail->status == null)

@@ -11,7 +11,7 @@ class MapelController extends Controller
 {
     public function index()
     {
-        $list = MasterMapel::select('id','nama')->get();
+        $list = MasterMapel::select('id', 'kode', 'nama')->get();
 
         $data = array();
 
@@ -29,7 +29,7 @@ class MapelController extends Controller
             $no = $no+1;
 
             $data[] = array(
-                $no, $v->nama,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
+                $no, $v->kode, $v->nama,'<nobr>'.$btnEdit.$btnDelete.'</nobr>'
             );
         }
 

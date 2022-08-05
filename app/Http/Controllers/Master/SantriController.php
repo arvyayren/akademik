@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Models\MasterSantri;
 
+use Auth;
+
 class SantriController extends Controller
 {
     public function index()
@@ -18,14 +20,18 @@ class SantriController extends Controller
         $no = 0;
 
         foreach($list as $k => $v){
-
+            
+            if(Auth::user()->email == 'admin@admin.com'){
             $btnEdit = '<a href="/master/santri/'.$v->id.'/edit" class="btn btn-xs btn-default text-primary mx-1 shadow">
                             <i class="fa fa-lg fa-fw fa-pen"></i>
                         </a>';
             $btnDelete = '<button type="submit" form="delete'.$v->id.'" class="btn btn-xs btn-default text-danger mx-1 shadow">
                             <i class="fa fa-lg fa-fw fa-trash"></i>
                         </button>';
-            
+            }else{
+                $btnEdit ="";
+                $btnDelete = "" ;
+            }
             $no = $no+1;
         
             $data[] = array(

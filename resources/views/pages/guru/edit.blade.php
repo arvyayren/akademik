@@ -52,7 +52,8 @@
         </div>
         
         <div class="row">
-            <x-adminlte-select label="Kelas" fgroup-class="col-md-6" name="wali_kelas" required>
+            <x-adminlte-select label="Wali Kelas" fgroup-class="col-md-6" name="wali_kelas" required>
+                <option value="-" <?php if($data->wali_kelas == '-'){ echo 'selected';} ?>>-</option>
                 <option value="A" <?php if($data->wali_kelas == 'A'){ echo 'selected';} ?>>A</option>
                 <option value="B" <?php if($data->wali_kelas == 'B'){ echo 'selected';} ?>>B</option>
                 <option value="C" <?php if($data->wali_kelas == 'C'){ echo 'selected';} ?>>C</option>

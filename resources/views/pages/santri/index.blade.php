@@ -66,9 +66,10 @@
                 <x-adminlte-button theme="danger" label="Dismiss" data-dismiss="modal"/>
             </x-slot>
         </x-adminlte-modal>
-
+        @if(Auth::user()->email == 'admin@admin.com')
         <x-adminlte-button icon="fas fa-plus-square" label="Create" data-toggle="modal" data-target="#create" class="bg-success"/>    
         <br/><br/>
+        @endif
 
         @php
         $heads = [
@@ -78,6 +79,7 @@
             'Tanggal Lahir',
             'No KTP',
             ['label' => 'Actions', 'no-export' => true, 'width' => 5],
+          
         ];
 
         $config = [

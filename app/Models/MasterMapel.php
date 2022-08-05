@@ -11,5 +11,5 @@ class MasterMapel extends Model
 
     protected $table = 'data_mapel';
 
-    protected $fillable = ['nama','created_at','updated_at'];
+    protected $fillable = ['nama','created_at','updated_at','kode'];
 }

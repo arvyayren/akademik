@@ -103,7 +103,7 @@ class PengumumanController extends Controller
             }
 
             $pendaftar[] = array(
-                $v->id,date('d M Y', strtotime($v->tanggal)),$v->nama,$v->tempat_lahir,date('d M Y', strtotime($v->tanggal_lahir)),$v->no_ktp,$v->riwayat_pendidikan,$v->nama_wali,$v->no_ktp_wali,$v->status,'<nobr>'.$diterima.$ditolak.'</nobr>'
+                $v->id, $v->kode_pendaftaran,date('d M Y', strtotime($v->tanggal)),$v->nama,$v->tempat_lahir,date('d M Y', strtotime($v->tanggal_lahir)),$v->no_ktp,$v->riwayat_pendidikan,$v->nama_wali,$v->no_ktp_wali,$v->status,'<nobr>'.$diterima.$ditolak.'</nobr>'
             );
         }
 
