@@ -65,12 +65,12 @@ class LaporanController extends Controller
         $no = 1;
         
         if($request->santri != null){
-            $data_header = TransaksiPenilaianSantriHeader::select('transaksi_penilaian_santri_header.bulan as bulan', 'transaksi_penilaian_santri_header.nama as nama', 'transaksi_penilaian_santri_header.kelas as kelas', 'master_guru.nama as wali_kelas')
-            ->join('master_guru', 'transaksi_penilaian_santri_header.wali_kelas', 'master_guru.id')
+            $data_header = TransaksiPenilaianSantriHeader::select('transaksi_penilaian_santri_header.bulan as bulan', 'transaksi_penilaian_santri_header.nama as nama', 'transaksi_penilaian_santri_header.kelas as kelas', 'data_guru.nama as wali_kelas')
+            ->join('data_guru', 'transaksi_penilaian_santri_header.wali_kelas', 'data_guru.id')
             ->where('transaksi_penilaian_santri_header.id', $request->santri)
             ->first();
-            $data_detail = TransaksiPenilaianSantriDetail::select('transaksi_penilaian_santri_detail.tanggal as tanggal', 'master_mapel.nama as mapel', 'transaksi_penilaian_santri_detail.subjek as subjek', 'transaksi_penilaian_santri_detail.nilai as nilai')
-            ->join('master_mapel', 'transaksi_penilaian_santri_detail.mapel', 'master_mapel.id')
+            $data_detail = TransaksiPenilaianSantriDetail::select('transaksi_penilaian_santri_detail.tanggal as tanggal', 'data_mapel.nama as mapel', 'transaksi_penilaian_santri_detail.subjek as subjek', 'transaksi_penilaian_santri_detail.nilai as nilai')
+            ->join('data_mapel', 'transaksi_penilaian_santri_detail.mapel', 'data_mapel.id')
             ->where('transaksi_penilaian_santri_detail.id_penilaian', $request->santri)
             ->orderBy('transaksi_penilaian_santri_detail.tanggal', 'asc')
             ->get();
